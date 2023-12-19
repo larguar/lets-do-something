@@ -4,32 +4,148 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Let's Do Something | Random</title>
+<title>Let's Do Something</title>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<link rel="stylesheet" href="https://use.typekit.net/mop5owf.css">
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-<header><a href="archive.html">Archive</a></header>
-<h1 class="name"></h1>
-<p class="location"></p>
-<div class="description"></div>
-
-<a href="#" class="btn btn-primary refresh">Pick a Product</a>
+<main class="flex wrap">
+	<div class="item photos">
+		<div class="background slideshow" data-aos="fade-left" data-aos-delay="600">
+			<div class="slideshow-image image1"></div>
+			<div class="slideshow-image image2"></div>
+			<div class="slideshow-image image3"></div>
+			<div class="slideshow-image image4"></div>
+		</div>
+	</div>
+	<div class="item main">
+		<div class="navigation">
+			<div class="left"><a href="all.html">Index</a></div>
+			<div class="right"><a href="" class="refresh">Next →</a></div>
+		</div>
+		<div class="container center">
+			<h1 class="name" data-aos="fade-left" data-aos-delay="600"></h1>
+			<p class="description" data-aos="fade-left" data-aos-delay="650"></p>
+		</div>
+	</div>
+	<div class="item title">
+		<div class="container center">
+			<h4 data-aos="fade-down" data-aos-delay="600" data-aos-anchor-placement="center-bottom">Let's Do Something</h4>
+			<h2 class="location" data-aos="fade-down" data-aos-delay="650" data-aos-anchor-placement="center-bottom"></h2>
+		</div>
+	</div>
+	<div class="item category">
+		<div class="rotate">
+			<h2 class="cat" data-aos="fade-left" data-aos-delay="650" data-aos-anchor-placement="center-bottom"></h2>
+		</div>
+	</div>
+	<div class="item details">
+		<div class="container center">
+			<div class="flex thirds">
+				<div class="item">
+					<div class="content">
+						<h3 data-aos="fade-down" data-aos-delay="700" data-aos-anchor-placement="center-bottom">Who</h3>
+						<p class="who" data-aos="fade-down" data-aos-delay="600" data-aos-anchor-placement="center-bottom"></p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="content">
+						<h3 data-aos="fade-down" data-aos-delay="750" data-aos-anchor-placement="center-bottom">Where</h3>
+						<p class="where" data-aos="fade-down" data-aos-delay="650" data-aos-anchor-placement="center-bottom"></p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="content">
+						<h3 data-aos="fade-down" data-aos-delay="800" data-aos-anchor-placement="center-bottom">Why</h3>
+						<p class="why" data-aos="fade-down" data-aos-delay="700" data-aos-anchor-placement="center-bottom"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript">
+AOS.init();
 // get json list
 $.getJSON('list.json', function(data) {
 	let list = data.list;
 	// select random item from list
 	var i = list[Math.floor(Math.random()*list.length)];
+	// build "who" content
+	let who = "";
+	if (i.who != "") {
+		who = who + i.who + " ";
+	} else {
+		who = who + "You can do this one ";
+	}
+	for (let p in i.people) {
+		if (i.people[p] === "Solo") {
+			who = who + "on your own ";
+		} else if (i.people[p] === "Mom") {
+			if (p > 0) {
+				who = who + "or "
+			}
+			who = who + "with mom ";
+		} else if (i.people[p] === "Family") {
+			if (p > 0) {
+				who = who + "or "
+			}
+			who = who + "make it a family " + i.type;
+			if (i.otw != "Maryland") {
+				who = who + " when we're in town"
+			} else {
+				who = who + " on your way to/from MD"
+			}
+		}
+	}
+	// build "where" content
+	let where = "";
+	if (i.where != "") {
+		where = where + i.where;
+	} else {
+		if (i.travelHours === 1) {
+			where = where + "<a href='" + i.map + "'>Less than an hour</a> from home";
+		} else {
+			where = where + "<a href='" + i.map + "' target='blank'>" + i.travelHours + " hours</a> from home";
+			if (i.otw === "Maryland") {
+				where = where + ". On the way to Maryland so we can meet you there"
+			} else if (i.otw === "Richmond") {
+				where = where + ". Richmond's on the way, so you can visit and/or scoop up Donna"
+			}
+		}
+	}
+	// build "why" content
+	let why = "";
+	if (i.why != "") {
+		why = why + i.why;
+	} else if (i.category === "Vineyards") {
+		why = why + "Because wine and gorgeous views. More like why the heck not?";
+	}
 	// update page content
 	$(".name").text(i.name);
-	$(".location").text(i.location);
 	$(".description").html(i.description);
-	$("img.product-img").attr("src", i.image);
-	$("img.product-img").attr("alt", i.name);
+	$(".location").text("in " + i.location);
+	$(".cat").text(i.category);
+	$(".who").html(who);
+	$(".where").html(where);
+	$(".why").html(why);
+	$(".image1").css("background-image", "url('" + i.image1 + "')");
+	$(".image2").css("background-image", "url('" + i.image2 + "')");
+	$(".image3").css("background-image", "url('" + i.image3 + "')");
+	$(".image4").css("background-image", "url('" + i.image4 + "')");
+	// add optional learn more button
+	if (i.url != "") {
+		$(".main .container").append("<div class='url flex right' data-aos='fade-left' data-aos-delay='700'><p><a href='" + i.url + "' target='blank'>Learn More</a></p></div>");
+	}
 });
 // refresh page on buttom click
 $(".refresh").click(function() {

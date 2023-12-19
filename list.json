@@ -1,36 +1,41 @@
 {
     "list": [
 		 {
-		   "name": "Get a Trash Wheel set up in Norfolk",
+		   "name": "Get a Trash Wheel set up locally",
 		   "location": "Norfolk, VA",
-		   "description": "<p>Trash wheels require funding, partnerships, and a whole lot of support to build. Citizens who want one in their city need to work on bringing people together locally to organize a campaign to fund, build, and support one.</p><p>For information and pricing, contact Clearwater Mills at 410-952-6370 or gearhart@clearwatermills.com with information on the waterway and site you are considering for a Trash Interceptors.</p>",
+		   "description": "Requires funding, partnerships, and local support to build and maintain. For information and pricing, contact Clearwater Mills at <a href='tel:4109526370'>410-952-6370</a> or <a href='mailto:gearhart@clearwatermills.com'>gearhart@clearwatermills.com</a> with information on the waterway and site you're considering for a Trash Interceptor.",
 		   "category": "Community Projects",
 		   "travelHours": 0,
-		   "image": "https://cdn.shopify.com/s/files/1/0106/9426/2842/products/PIN-EVO-BOX.png?v=1644029657"
+		   "type": "project",
+		   "people": ["Solo", "Family"],
+		   "otw": "",
+		   "who": "You can start this",
+		   "where": "Anywhere your heart desires (but probably in Norfolk)",
+		   "why": "To keep the bay clean and bring a little Baltimore to VA",
+		   "url": "https://www.mrtrashwheel.com/faq/",
+		   "image1": "https://media.newyorker.com/photos/5dc069806729e800080bfaf0/master/w_2240,c_limit/Kormann-MrTrashWheel.jpg",
+		   "image2": "https://images.newscientist.com/wp-content/uploads/2019/12/10114502/mr.-trash-wheel-aerial-trash-image.jpg",
+		   "image3": "https://bloximages.chicago2.vip.townnews.com/thestar.com/content/tncms/assets/v3/editorial/0/12/0127e9d6-b813-5257-b2af-6dceb140b019/64eab07c5ca2a.image.jpg",
+		   "image4": "https://www.mrtrashwheel.com/wp-content/uploads/2019/01/MTW-model-2-1024x662.png"
 		 },
 		 {
 		   "name": "Afton Mountain Vineyards",
 		   "location": "Afton, VA",
-		   "description": "<p>Situated atop rolling hills at the foot of the Blueridge Mountains in the scenic town of Afton, VA, about 25 miles west of Charlottesville. The 82-acre Afton Mountain property is home to some of the oldest vineyards in the region and boasts some of the most beautiful views. The views are equally stunning from the deck patio of one of four rental cottages available property.</p>",
+		   "description": "This 82-acre property at the foot of the Blueridge Mountains is home to some of the oldest vineyards in the region and boasts some of the most beautiful views.",
 		   "category": "Vineyards",
 		   "travelHours": 3,
-		   "image": "https://cdn.shopify.com/s/files/1/0106/9426/2842/products/PIN-EVO-BOX.png?v=1644029657"
-		 },
-		 {
-		   "name": "New River Gorge National Park",
-		   "location": "Prince, WV",
-		   "description": "<p>3 hour drive to Shenandoah National Park</p>",
-		   "category": "Travel",
-		   "travelHours": 5,
-		   "image": "https://cdn.shopify.com/s/files/1/0106/9426/2842/products/PIN-EVO-BOX.png?v=1644029657"
-		 },
-		 {
-		   "name": "Organize a Community Beach Cleanup in Norfolk",
-		   "location": "Norfolk, VA",
-		   "description": "<p>For information and pricing, contact Clearwater Mills at 410-952-6370 or gearhart@clearwatermills.com with information on the waterway and site you are considering for a Trash Interceptors.</p>",
-		   "category": "Community Projects",
-		   "travelHours": 0,
-		   "image": "https://cdn.shopify.com/s/files/1/0106/9426/2842/products/PIN-EVO-BOX.png?v=1644029657"
+		   "type": "activity",
+		   "people": ["Mom", "Family"],
+		   "otw": "Richmond",
+		   "who": "",
+		   "where": "",
+		   "why": "",
+		   "url": "https://www.aftonmountainvineyards.com/",
+		   "map": "",
+		   "image1": "https://i.lmpm.com/img/lmpm-company-store-prod/628545ec73827/properties/b8220436-89e5-4849-b2ef-a0d16c17afc1/afton-0037-1.jpg",
+		   "image2": "https://charlottesville.guide/wp-content/uploads/2017/06/Afton-Mountain-5-1.jpg",
+		   "image3": "https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/virginia/Afton-0018_edited_d57ac16a-5056-a36a-0793f82d63c634bb.jpg",
+		   "image4": "https://i.lmpm.com/img/lmpm-company-store-prod/628545ec73827/properties/b8220436-89e5-4849-b2ef-a0d16c17afc1/afton-0041-1.jpg"
 		 }
 		]
 }
