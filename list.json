@@ -1,0 +1,36 @@
+{
+    "list": [
+		 {
+		   "name": "Get a Trash Wheel set up in Norfolk",
+		   "location": "Norfolk, VA",
+		   "description": "<p>Trash wheels require funding, partnerships, and a whole lot of support to build. Citizens who want one in their city need to work on bringing people together locally to organize a campaign to fund, build, and support one.</p><p>For information and pricing, contact Clearwater Mills at 410-952-6370 or gearhart@clearwatermills.com with information on the waterway and site you are considering for a Trash Interceptors.</p>",
+		   "category": "Community Projects",
+		   "travelHours": 0,
+		   "image": "https://cdn.shopify.com/s/files/1/0106/9426/2842/products/PIN-EVO-BOX.png?v=1644029657"
+		 },
+		 {
+		   "name": "Afton Mountain Vineyards",
+		   "location": "Afton, VA",
+		   "description": "<p>Situated atop rolling hills at the foot of the Blueridge Mountains in the scenic town of Afton, VA, about 25 miles west of Charlottesville. The 82-acre Afton Mountain property is home to some of the oldest vineyards in the region and boasts some of the most beautiful views. The views are equally stunning from the deck patio of one of four rental cottages available property.</p>",
+		   "category": "Vineyards",
+		   "travelHours": 3,
+		   "image": "https://cdn.shopify.com/s/files/1/0106/9426/2842/products/PIN-EVO-BOX.png?v=1644029657"
+		 },
+		 {
+		   "name": "New River Gorge National Park",
+		   "location": "Prince, WV",
+		   "description": "<p>3 hour drive to Shenandoah National Park</p>",
+		   "category": "Travel",
+		   "travelHours": 5,
+		   "image": "https://cdn.shopify.com/s/files/1/0106/9426/2842/products/PIN-EVO-BOX.png?v=1644029657"
+		 },
+		 {
+		   "name": "Organize a Community Beach Cleanup in Norfolk",
+		   "location": "Norfolk, VA",
+		   "description": "<p>For information and pricing, contact Clearwater Mills at 410-952-6370 or gearhart@clearwatermills.com with information on the waterway and site you are considering for a Trash Interceptors.</p>",
+		   "category": "Community Projects",
+		   "travelHours": 0,
+		   "image": "https://cdn.shopify.com/s/files/1/0106/9426/2842/products/PIN-EVO-BOX.png?v=1644029657"
+		 }
+		]
+}
