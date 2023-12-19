@@ -10,14 +10,46 @@
 .right {
     justify-content: right;
 }
+.space {
+	justify-content: space-between;
+}
+.grow {
+	flex-grow: 1;
+}
+.location {
+    padding: 0 30px;
+}
 
 
 
 
 
 
-
-
+.all {
+    max-width: 600px;
+    padding: 0 100px 60px;
+    margin: 0 auto;
+}
+.all li {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.all li a {
+    color: yellow;
+}
+.all h3 {
+    color: #aaa;
+    margin-top: 4px;
+}
+.all ul {
+    margin: 0;
+    padding: 0;
+}
+body.dark .all h1 {
+    color: yellow;
+    margin: 80px 0 30px;
+}
 
 
 
