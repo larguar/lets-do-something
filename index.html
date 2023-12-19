@@ -113,9 +113,9 @@ $.getJSON('list.json', function(data) {
 		where = where + i.where;
 	} else {
 		if (i.travelHours === 1) {
-			where = where + "<a href='" + i.map + "'>Less than an hour</a> from home";
+			where = where + "<a href='" + i.map + "' target='_blank'>Less than an hour</a> from home";
 		} else {
-			where = where + "<a href='" + i.map + "' target='blank'>" + i.travelHours + " hours</a> from home";
+			where = where + "<a href='" + i.map + "' target='_blank'>" + i.travelHours + " hours</a> from home";
 			if (i.otw === "Maryland") {
 				where = where + ". On the way to Maryland so we can meet you there"
 			} else if (i.otw === "Richmond") {
@@ -144,7 +144,7 @@ $.getJSON('list.json', function(data) {
 	$(".image4").css("background-image", "url('" + i.image4 + "')");
 	// add optional learn more button
 	if (i.url != "") {
-		$(".main .container").append("<div class='url flex right' data-aos='fade-left' data-aos-delay='700'><p><a href='" + i.url + "' target='blank'>Learn More</a></p></div>");
+		$(".main .container").append("<div class='url flex right' data-aos='fade-left' data-aos-delay='700'><p><a href='" + i.url + "' target='_blank'>Learn More</a></p></div>");
 	}
 });
 // refresh page on buttom click
