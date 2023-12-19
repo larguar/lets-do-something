@@ -6,13 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Let's Do Something</title>
 
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <link rel="stylesheet" href="https://use.typekit.net/mop5owf.css">
 <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
-	
+
 <main class="flex wrap">
 	<div class="item photos">
 		<div class="background slideshow" data-aos="fade-left" data-aos-delay="600">
@@ -25,7 +28,7 @@
 	<div class="item main">
 		<div class="navigation">
 			<div class="left"><a href="all.html">Index</a></div>
-			<div class="right"><a href="random.html">Random →</a></div>
+			<div class="right"><a href="" class="refresh">Next →</a></div>
 		</div>
 		<div class="container center">
 			<h1 class="name" data-aos="fade-left" data-aos-delay="600"></h1>
@@ -71,33 +74,33 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript">
-// get item index from page url
-let a = window.location.href;
-let i = a.split('#').pop();
+AOS.init();
 // get json list
 $.getJSON('list.json', function(data) {
 	let list = data.list;
+	// select random item from list
+	var i = list[Math.floor(Math.random()*list.length)];
 	// build "who" content
 	let who = "";
-	if (list[i].who != "") {
-		who = who + list[i].who + " ";
+	if (i.who != "") {
+		who = who + i.who + " ";
 	} else {
 		who = who + "You can do this one ";
 	}
-	for (let p in list[i].people) {
-		if (list[i].people[p] === "Solo") {
+	for (let p in i.people) {
+		if (i.people[p] === "Solo") {
 			who = who + "on your own ";
-		} else if (list[i].people[p] === "Mom") {
+		} else if (i.people[p] === "Mom") {
 			if (p > 0) {
 				who = who + "or "
 			}
 			who = who + "with mom ";
-		} else if (list[i].people[p] === "Family") {
+		} else if (i.people[p] === "Family") {
 			if (p > 0) {
 				who = who + "or "
 			}
-			who = who + "make it a family " + list[i].type;
-			if (list[i].otw != "Maryland") {
+			who = who + "make it a family " + i.type;
+			if (i.otw != "Maryland") {
 				who = who + " when we're in town"
 			} else {
 				who = who + " on your way to/from MD"
@@ -106,43 +109,47 @@ $.getJSON('list.json', function(data) {
 	}
 	// build "where" content
 	let where = "";
-	if (list[i].where != "") {
-		where = where + list[i].where;
+	if (i.where != "") {
+		where = where + i.where;
 	} else {
-		if (list[i].travelHours === 1) {
-			where = where + "<a href='" + list[i].map + "' target='_blank'>Less than an hour</a> from home";
+		if (i.travelHours === 1) {
+			where = where + "<a href='" + i.map + "' target='_blank'>Less than an hour</a> from home";
 		} else {
-			where = where + "<a href='" + list[i].map + "' target='_blank'>" + list[i].travelHours + " hours</a> from home";
-			if (list[i].otw === "Maryland") {
+			where = where + "<a href='" + i.map + "' target='_blank'>" + i.travelHours + " hours</a> from home";
+			if (i.otw === "Maryland") {
 				where = where + ". On the way to Maryland so we can meet you there"
-			} else if (list[i].otw === "Richmond") {
+			} else if (i.otw === "Richmond") {
 				where = where + ". Richmond's on the way, so you can visit and/or scoop up Donna"
 			}
 		}
 	}
 	// build "why" content
 	let why = "";
-	if (list[i].why != "") {
-		why = why + list[i].why;
-	} else if (list[i].category === "Vineyards") {
+	if (i.why != "") {
+		why = why + i.why;
+	} else if (i.category === "Vineyards") {
 		why = why + "Because wine and gorgeous views. More like why the heck not?";
 	}
 	// update page content
-	$(".name").text(list[i].name);
-	$(".description").html(list[i].description);
-	$(".location").text("in " + list[i].location);
-	$(".cat").text(list[i].category);
+	$(".name").text(i.name);
+	$(".description").html(i.description);
+	$(".location").text("in " + i.location);
+	$(".cat").text(i.category);
 	$(".who").html(who);
 	$(".where").html(where);
 	$(".why").html(why);
-	$(".image1").css("background-image", "url('" + list[i].image1 + "')");
-	$(".image2").css("background-image", "url('" + list[i].image2 + "')");
-	$(".image3").css("background-image", "url('" + list[i].image3 + "')");
-	$(".image4").css("background-image", "url('" + list[i].image4 + "')");
+	$(".image1").css("background-image", "url('" + i.image1 + "')");
+	$(".image2").css("background-image", "url('" + i.image2 + "')");
+	$(".image3").css("background-image", "url('" + i.image3 + "')");
+	$(".image4").css("background-image", "url('" + i.image4 + "')");
 	// add optional learn more button
-	if (list[i].url != "") {
-		$(".main .container").append("<div class='url flex right' data-aos='fade-left' data-aos-delay='700'><p><a href='" + list[i].url + "' target='_blank'>Learn More</a></p></div>");
+	if (i.url != "") {
+		$(".main .container").append("<div class='url flex right' data-aos='fade-left' data-aos-delay='700'><p><a href='" + i.url + "' target='_blank'>Learn More</a></p></div>");
 	}
+});
+// refresh page on buttom click
+$(".refresh").click(function() {
+	document.location.reload(true);
 });
 </script>
 
