@@ -19,7 +19,7 @@
 <div class="page flex">
 	<div class="container center">
 	<h2 data-aos="fade-left" data-aos-delay="600">For Jed —</h2>
-	<h1 data-aos="fade-left" data-aos-delay="650">100 Fulfilling Things to Do When You’re Not Quite Retired, But Not Quite Looking for Another Job*</h1>
+	<h1 data-aos="fade-left" data-aos-delay="650"><span class="count"></span>Fulfilling Things to Do When You’re Not Quite Retired, But Not Quite Looking for Another Job*</h1>
 	<p data-aos="fade-left" data-aos-delay="700">*Work sucks, I know — Blink 182</p>
 	<div class='url flex right' data-aos='fade-up' data-aos-delay='750'><p><a href="random.html">Enter</a></p></div>
 	</div>
@@ -40,6 +40,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript">
 AOS.init();
+
+
+// get json list
+$.getJSON('list.json', function(data) {
+	let list = data.list;
+	// update page content
+	$(".count").text(list.length + " ");
+});
 </script>
 
 </body>
