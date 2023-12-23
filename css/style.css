@@ -595,6 +595,12 @@ body.dark .url a {
 	h1 {
 	    font-size: 54px;
 	}
+	.item.category {
+	    width: 80px;
+	}
+	.item.details {
+	    width: calc(65vw - 80px);
+	}
 }
 @media screen and (max-width:767px) {
 	.page {
