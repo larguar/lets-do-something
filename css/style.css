@@ -127,7 +127,7 @@ p a {
 
 
 .page {
-    height: 90vh;
+    height: 92vh;
     width: 100vw;
 }
 
@@ -537,7 +537,7 @@ body.dark .url a {
 .marquee {
     display: flex;
     overflow: hidden;
-    height: 10vh;
+    height: 8vh;
     user-select: none;
     background: yellow;
 }
@@ -572,4 +572,58 @@ body.dark .url a {
     .marquee__group span {
         font-size: 20px;
     }
+}
+
+
+
+
+
+
+@media (max-width: 991px) {
+
+h1 {
+    font-size: 54px;
+}
+
+}
+@media screen and (max-width:767px) {
+
+.page {
+    height: auto;
+    width: auto;
+}
+.page.flex {
+    display: block;
+}
+.page .container {
+    padding: 100px 80px;
+}
+h1 {
+    font-size: 48px;
+}
+body.dark .url a, body.dark .url a:hover {
+    font-size: 20px!important;
+    padding: 4px 16px 6px!important;
+    transform: rotate(-3deg)!important;
+    width: 100px!important;
+    margin: initial!important;
+}
+.url {
+    margin-top: 20px;
+}
+
+}
+@media screen and (max-width: 575px) {
+
+.page .container {
+    padding: 80px 30px;
+}
+h1 {
+    font-size: 34px;
+    line-height: 1.1;
+}
+
+}
+@media screen and (max-width: 320px) {
+
 }
