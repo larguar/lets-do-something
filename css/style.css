@@ -634,13 +634,15 @@ body.dark .url a {
 	}
 	body.dark .url a, body.dark .url a:hover {
 	    font-size: 20px!important;
+	}
+	.url a, .url a:hover {
 	    padding: 4px 16px 6px!important;
 	    transform: rotate(-3deg)!important;
 	    width: 100px!important;
 	    margin: initial!important;
 	}
 	.url {
-	    margin-top: 20px;
+	    margin-top: 10px;
 	}
 	.item.title {
 	    order: 1;
@@ -679,6 +681,10 @@ body.dark .url a {
 	    font-size: 34px;
 	    line-height: 1.1;
 	}
+	h4 {
+	    font-size: 26px;
+	    margin: 0 0 5px;
+	}
 	.item.photos {
 	    height: 400px;
 	    width: 100%;
@@ -686,6 +692,33 @@ body.dark .url a {
 	.item.title {
 	    height: auto;
 	    width: 100%;
+	}
+	.item.title {
+	    justify-content: center;
+	}
+	.item.title .container {
+	    padding: 20px 30px;
+	}
+	.main .container {
+	    padding: 60px 30px;
+	}
+	.item.category {
+	    width: 60px;
+	}
+	.item.details {
+	    width: calc(65vw - 60px);
+	}
+	.rotate {
+	    height: 60px;
+	}
+	.item.details .flex {
+	    display: block;
+	}
+	.half .item {
+	    width: 100%!important;
+	}
+	.half .item:nth-of-type(2) {
+	    margin-top: 30px;
 	}
 }
 @media screen and (max-width: 320px) {
