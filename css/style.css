@@ -32,6 +32,7 @@
 }
 .all li {
     font-size: 20px;
+    line-height: 1.15;
     color: #fff;
     margin-bottom: 10px;
 }
@@ -40,7 +41,7 @@
 }
 .all h3 {
     color: #aaa;
-    margin-top: 4px;
+    margin-top: 6px;
 }
 .all ul {
     margin: 0;
@@ -290,7 +291,7 @@ p a {
     padding: 20px;
 }
 
-.item-list li .grow {
+.all li .grow {
     margin-right: 30px;
 }
 .container {
@@ -591,49 +592,43 @@ body.dark .url a {
 
 
 @media (max-width: 991px) {
-
-h1 {
-    font-size: 54px;
-}
-
+	h1 {
+	    font-size: 54px;
+	}
 }
 @media screen and (max-width:767px) {
-
-.page {
-    height: auto;
-    width: auto;
-}
-.page.flex {
-    display: block;
-}
-.page .container {
-    padding: 100px 80px;
-}
-h1 {
-    font-size: 48px;
-}
-body.dark .url a, body.dark .url a:hover {
-    font-size: 20px!important;
-    padding: 4px 16px 6px!important;
-    transform: rotate(-3deg)!important;
-    width: 100px!important;
-    margin: initial!important;
-}
-.url {
-    margin-top: 20px;
-}
-
+	.page {
+	    height: auto;
+	    width: auto;
+	}
+	.page.flex {
+	    display: block;
+	}
+	.page .container {
+	    padding: 100px 80px;
+	}
+	h1 {
+	    font-size: 48px;
+	}
+	body.dark .url a, body.dark .url a:hover {
+	    font-size: 20px!important;
+	    padding: 4px 16px 6px!important;
+	    transform: rotate(-3deg)!important;
+	    width: 100px!important;
+	    margin: initial!important;
+	}
+	.url {
+	    margin-top: 20px;
+	}
 }
 @media screen and (max-width: 575px) {
-
-.page .container {
-    padding: 80px 30px;
-}
-h1 {
-    font-size: 34px;
-    line-height: 1.1;
-}
-
+	.page .container {
+	    padding: 80px 30px;
+	}
+	h1 {
+	    font-size: 34px;
+	    line-height: 1.1;
+	}
 }
 @media screen and (max-width: 320px) {
 
