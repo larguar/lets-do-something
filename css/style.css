@@ -229,7 +229,7 @@ p a {
 .item.details {
 	background: #1e1e1e;
 	color: #fff;
-	width: 55vw;
+	width: calc(65vw - 100px);
 	height: 35vh;
 	flex-grow: 1;
 }
