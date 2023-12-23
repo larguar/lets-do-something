@@ -593,7 +593,7 @@ body.dark .url a {
 
 @media (max-width: 991px) {
 	h1 {
-	    font-size: 54px;
+	    font-size: 50px;
 	}
 	.item.category {
 	    width: 80px;
@@ -616,7 +616,7 @@ body.dark .url a {
 	.page.flex {
 	    display: block;
 	}
-	.page .container {
+	.container {
 	    padding: 100px 80px;
 	}
 	h1 {
@@ -631,6 +631,35 @@ body.dark .url a {
 	}
 	.url {
 	    margin-top: 20px;
+	}
+	.item.title {
+	    order: 1;
+	    height: 300px;
+	    width: 50vw;
+	}
+	.item.photos {
+	    order: 2;
+	    height: auto;
+	    width: 50vw;
+	}
+	.item.main {
+	    order: 3;
+	    height: auto;
+	    width: 100%;
+	    overflow: visible;
+	}
+	.item.category {
+	    order: 4;
+	    height: auto;
+	}
+	.item.details {
+	    order: 5;
+	    height: auto;
+	}
+	.navigation {
+
+	    bottom: auto;
+	    top: -50px;
 	}
 }
 @media screen and (max-width: 575px) {
