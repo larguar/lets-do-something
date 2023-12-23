@@ -601,6 +601,9 @@ body.dark .url a {
 	.item.details {
 	    width: calc(65vw - 80px);
 	}
+	.rotate {
+	    height: 80px;
+	}
 	.item.title .container {
 	    padding: 0 30px;
 	}
@@ -616,8 +619,8 @@ body.dark .url a {
 	.page.flex {
 	    display: block;
 	}
-	.container {
-	    padding: 100px 80px;
+	.container, .page .container, .main .container {
+	    padding: 100px 60px;
 	}
 	h1 {
 	    font-size: 48px;
