@@ -186,6 +186,12 @@ p a {
 
 
 
+.half .item {
+    width: 35%;
+}
+.half .item:nth-of-type(2) {
+    width: 65%;
+}
 .thirds .item {
     width: 33.333%;
 }

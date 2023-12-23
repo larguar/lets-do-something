@@ -48,23 +48,17 @@
 	</div>
 	<div class="item details">
 		<div class="container center">
-			<div class="flex thirds">
+			<div class="flex half">
 				<div class="item">
 					<div class="content">
-						<h3 data-aos="fade-down" data-aos-delay="700" data-aos-anchor-placement="center-bottom">Who</h3>
+						<h3 data-aos="fade-down" data-aos-delay="700" data-aos-anchor-placement="center-bottom">Do With</h3>
 						<p class="who" data-aos="fade-down" data-aos-delay="600" data-aos-anchor-placement="center-bottom"></p>
 					</div>
 				</div>
 				<div class="item">
 					<div class="content">
-						<h3 data-aos="fade-down" data-aos-delay="750" data-aos-anchor-placement="center-bottom">Where</h3>
-						<p class="where" data-aos="fade-down" data-aos-delay="650" data-aos-anchor-placement="center-bottom"></p>
-					</div>
-				</div>
-				<div class="item">
-					<div class="content">
-						<h3 data-aos="fade-down" data-aos-delay="800" data-aos-anchor-placement="center-bottom">Why</h3>
-						<p class="why" data-aos="fade-down" data-aos-delay="700" data-aos-anchor-placement="center-bottom"></p>
+						<h3 data-aos="fade-down" data-aos-delay="800" data-aos-anchor-placement="center-bottom">Notes</h3>
+						<p class="notes" data-aos="fade-down" data-aos-delay="700" data-aos-anchor-placement="center-bottom"></p>
 					</div>
 				</div>
 			</div>
@@ -82,53 +76,52 @@ $.getJSON('list.json', function(data) {
 	var i = list[Math.floor(Math.random()*list.length)];
 	// build "who" content
 	let who = "";
-	if (i.who != "") {
-		who = who + i.who + " ";
-	} else {
-		who = who + "You can do this one ";
+	if (i.solo && i.mom === false && i.family === false && i.walter === false) {
+		who = who + "Solo";
+	} else if (i.solo) {
+		who = who + "Solo, ";
 	}
-	for (let p in i.people) {
-		if (i.people[p] === "Solo") {
-			who = who + "on your own ";
-		} else if (i.people[p] === "Mom") {
-			if (p > 0) {
-				who = who + "or "
-			}
-			who = who + "with mom ";
-		} else if (i.people[p] === "Family") {
-			if (p > 0) {
-				who = who + "or "
-			}
-			who = who + "make it a family " + i.type;
-			if (i.otw != "Maryland") {
-				who = who + " when we're in town"
-			} else {
-				who = who + " on your way to/from MD"
-			}
-		}
+	if (i.mom && i.family === false && i.walter === false) {
+		who = who + "Mom";
+	} else if (i.mom) {
+		who = who + "Mom, ";
 	}
+	if (i.family && i.walter === false) {
+		who = who + "Family";
+	} else if (i.family) {
+		who = who + "Family, ";
+	}
+	if (i.walter) {
+		who = who + "Walter";
+	}	
 	// build "where" content
 	let where = "";
 	if (i.where != "") {
 		where = where + i.where;
 	} else {
-		if (i.travelHours === 1) {
-			where = where + "<a href='" + i.map + "' target='_blank'>Less than an hour</a> from home";
-		} else {
-			where = where + "<a href='" + i.map + "' target='_blank'>" + i.travelHours + " hours</a> from home";
-			if (i.otw === "Maryland") {
-				where = where + ". On the way to Maryland so we can meet you there"
+		if (i.travelHours === 0) {
+			where = where + "Right down the street, so you really don't have any excuses with this one.";
+		} else if (i.travelHours === 1) {
+			where = where + "<a href='" + i.map + "' target='_blank'>Less than an hour</a> from home.";
+		} else if (i.travelHours > 1) {
+			where = where + "<a href='" + i.map + "' target='_blank'>" + i.travelHours + " hours</a> from home.";
+			if (i.otw === "DC") {
+				where = where + " You'll drive by DC, so you could take a brief detour on the way to see us"
+				if (i.family && i.walter === false) {
+					where = where + " or we could meet you there"
+				}
+				where = where + "."
 			} else if (i.otw === "Richmond") {
-				where = where + ". Richmond's on the way, so you can visit and/or scoop up Donna"
+				where = where + " You'll drive through Richmond, so you can visit with Donna on the way or scoop her up and take her with you."
 			}
 		}
 	}
 	// build "why" content
 	let why = "";
 	if (i.why != "") {
-		why = why + i.why;
+		why = why + i.why + " ";
 	} else if (i.category === "Vineyards") {
-		why = why + "Because wine and gorgeous views. More like why the heck not?";
+		why = why + "Because wine and gorgeous views. ";
 	}
 	// update page content
 	$(".name").text(i.name);
@@ -136,8 +129,7 @@ $.getJSON('list.json', function(data) {
 	$(".location").text("in " + i.location);
 	$(".cat").text(i.category);
 	$(".who").html(who);
-	$(".where").html(where);
-	$(".why").html(why);
+	$(".notes").html(why + where);
 	$(".image1").css("background-image", "url('" + i.image1 + "')");
 	$(".image2").css("background-image", "url('" + i.image2 + "')");
 	$(".image3").css("background-image", "url('" + i.image3 + "')");
