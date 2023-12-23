@@ -257,6 +257,9 @@ p a {
     height: 50px;
     z-index: 2;
 }
+.dark .navigation {
+    position: fixed;
+}
 .navigation div {
     width: 50%;
     align-items: center;
@@ -281,7 +284,9 @@ p a {
     padding: 20px;
 }
 
-
+.item-list li .grow {
+    margin-right: 30px;
+}
 .container {
     padding: 0 80px;
 }

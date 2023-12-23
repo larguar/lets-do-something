@@ -40,14 +40,14 @@ $.getJSON('list.json', function(data) {
 	let uniqueCategories = removeDuplicates(categories);	
 	// append page content
 	for (let c in uniqueCategories) {
-		$(".all").append("<h1 data-aos='fade-left' data-aos-delay='600'>" + uniqueCategories[c] + "</h1><ul>");		
+		$(".all").append("<h1 data-aos='fade-left' data-aos-delay='600'>" + uniqueCategories[c] + "</h1><ul class='item-list'>");		
 		for (let i in list) {
 			if (list[i].category === uniqueCategories[c]) {
 				console.log(i);
 				$(".all").append("<li class='flex' data-aos='fade-left' data-aos-delay='650'><div class='grow'>" + list[i].name + "<h3>" + list[i].location + "</h3></div><div class='item'><a href='details.html#" + i + "'>View</a></li>");
 			}
 		}
-		
+		$(".all").append("</ul>");
 	}	
 });
 </script>
