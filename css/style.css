@@ -601,6 +601,12 @@ body.dark .url a {
 	.item.details {
 	    width: calc(65vw - 80px);
 	}
+	.item.title .container {
+	    padding: 0 30px;
+	}
+	.container {
+	    padding: 0 60px;
+	}
 }
 @media screen and (max-width:767px) {
 	.page {
