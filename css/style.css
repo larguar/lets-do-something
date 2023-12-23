@@ -679,6 +679,14 @@ body.dark .url a {
 	    font-size: 34px;
 	    line-height: 1.1;
 	}
+	.item.photos {
+	    height: 400px;
+	    width: 100%;
+	}
+	.item.title {
+	    height: auto;
+	    width: 100%;
+	}
 }
 @media screen and (max-width: 320px) {
 
