@@ -619,7 +619,14 @@ body.dark .url a {
 	.page.flex {
 	    display: block;
 	}
-	.container, .page .container, .main .container {
+	.container {
+	    padding: 60px;
+	}
+	.main .container {
+	    padding: 80px 60px;
+	    margin-bottom: 0;
+	}
+	.page .container {
 	    padding: 100px 60px;
 	}
 	h1 {
@@ -637,7 +644,7 @@ body.dark .url a {
 	}
 	.item.title {
 	    order: 1;
-	    height: 300px;
+	    height: 400px;
 	    width: 50vw;
 	}
 	.item.photos {
@@ -660,7 +667,6 @@ body.dark .url a {
 	    height: auto;
 	}
 	.navigation {
-
 	    bottom: auto;
 	    top: -50px;
 	}
