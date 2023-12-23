@@ -673,6 +673,7 @@ html {
 	.navigation {
 	    bottom: auto;
 	    top: -50px;
+	    z-index: 5;
 	}
 	.dark .navigation {
 	    top: auto;
