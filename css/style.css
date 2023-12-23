@@ -325,7 +325,9 @@ body.dark .url a {
 }
 
 
-
+html {
+	overflow-x: hidden;
+}
 
 
 
@@ -672,6 +674,10 @@ body.dark .url a {
 	    bottom: auto;
 	    top: -50px;
 	}
+	.dark .navigation {
+	    top: auto;
+	    bottom: 0;
+	}
 }
 @media screen and (max-width: 575px) {
 	.container {
@@ -726,7 +732,7 @@ body.dark .url a {
 	p {
 	    font-size: 16px;
 	}
-}
-@media screen and (max-width: 320px) {
-
+	.all {
+	    padding: 0 30px 80px;
+	}
 }
